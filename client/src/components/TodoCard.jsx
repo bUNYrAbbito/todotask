@@ -1,20 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './TodoCard.css'; // Import your custom CSS file
 
 export default function TodoCard({ todo, onDelete, onToggle }) {
   return (
-    <div className="border p-3 rounded shadow-sm">
-      <div className="flex justify-between items-start">
-        <div>
-          <h3 className={`font-bold ${todo.completed ? 'line-through' : ''}`}>{todo.title}</h3>
-          <p className="text-sm">{todo.description}</p>
-          <p className="text-xs mt-1">{todo.category} {todo.dueDate ? `• Due: ${new Date(todo.dueDate).toLocaleDateString()}` : ''}</p>
-          {todo.user && <p className="text-xs text-gray-500">by {todo.user.username || todo.user}</p>}
+    <div className="todo-card">
+      <div className="todo-content">
+        <div className="todo-info">
+          <h3 className={`todo-title ${todo.completed ? 'completed' : ''}`}>
+            {todo.title}
+          </h3>
+          <p className="todo-description">{todo.description}</p>
+          <p className="todo-meta">
+            {todo.category}
+            {todo.dueDate ? ` • Due: ${new Date(todo.dueDate).toLocaleDateString()}` : ''}
+          </p>
+          {todo.user && (
+            <p className="todo-user">by {todo.user.username || todo.user}</p>
+          )}
         </div>
-        <div className="space-y-2">
-          <button onClick={onToggle} className="px-2 py-1 border rounded text-sm">{todo.completed ? 'Undo' : 'Complete'}</button>
-          <Link to={`/todos/${todo._id}/edit`} className="px-2 py-1 border rounded text-sm block">Edit</Link>
-          <button onClick={()=>onDelete(todo._id)} className="px-2 py-1 bg-red-600 text-white rounded text-sm">Delete</button>
+
+        <div className="todo-actions">
+          <button
+            onClick={onToggle}
+            className={`btn ${todo.completed ? 'btn-secondary' : 'btn-success'}`}
+          >
+            {todo.completed ? 'Undo' : 'Complete'}
+          </button>
+          <Link to={`/todos/${todo._id}/edit`} className="btn btn-edit">
+            Edit
+          </Link>
+          <button onClick={() => onDelete(todo._id)} className="btn btn-danger">
+            Delete
+          </button>
         </div>
       </div>
     </div>

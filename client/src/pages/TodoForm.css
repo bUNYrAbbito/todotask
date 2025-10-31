@@ -1,0 +1,96 @@
+/* src/styles/TodoForm.css */
+
+.todo-form-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+}
+
+.todo-form-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-form-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.todo-form-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+.todo-input,
+.todo-textarea,
+.todo-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-input:focus,
+.todo-textarea:focus,
+.todo-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+.todo-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.todo-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.todo-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.todo-btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-1px);
+}
+
+.todo-msg {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #dc2626;
+}
+
+@media (max-width: 640px) {
+  .todo-form-card {
+    padding: 2rem 1.5rem;
+  }
+}

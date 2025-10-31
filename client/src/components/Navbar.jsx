@@ -1,25 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'; // Import your custom CSS
 
-export default function Navbar({ user, onLogout }){
+export default function Navbar({ user, onLogout }) {
   return (
-    <nav className="bg-gray-100 p-4 mb-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div>
-          <Link to="/" className="font-bold">TodoApp</Link>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-brand">
+          <Link to="/" className="navbar-logo">TodoApp</Link>
         </div>
-        <div className="space-x-3">
+        <div className="navbar-links">
           {user ? (
             <>
-              <span className="mr-2">Hi, {user.username} ({user.role})</span>
-              <Link to="/dashboard" className="mr-2">Dashboard</Link>
-              {user.role === 'admin' && <Link to="/admin" className="mr-2">Admin</Link>}
-              <button onClick={onLogout} className="bg-red-500 text-white px-2 py-1 rounded">Logout</button>
+              <span className="navbar-user">Hi, {user.username} ({user.role})</span>
+              <Link to="/dashboard" className="navbar-link">Dashboard</Link>
+              {user.role === 'admin' && <Link to="/admin" className="navbar-link">Admin</Link>}
+              <button onClick={onLogout} className="navbar-btn logout">Logout</button>
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/register" className="ml-2">Register</Link>
+              <Link to="/login" className="navbar-link">Login</Link>
+              <Link to="/register" className="navbar-link">Register</Link>
             </>
           )}
         </div>

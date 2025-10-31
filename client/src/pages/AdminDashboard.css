@@ -1,0 +1,66 @@
+/* src/styles/AdminDashboard.css */
+
+.admin-dashboard {
+  padding: 2rem;
+  background: #f9fafb;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.admin-dashboard h2 {
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.admin-section {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.admin-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.user-card,
+.todo-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+  transition: background 0.2s ease;
+}
+
+.user-card:hover,
+.todo-card:hover {
+  background-color: #f3f4f6;
+}
+
+.role-button {
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.role-button:hover {
+  background-color: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.user-info {
+  color: #4b5563;
+  font-size: 0.85rem;
+}
